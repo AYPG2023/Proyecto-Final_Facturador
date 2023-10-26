@@ -142,6 +142,72 @@ int main(){
 			cout<<"!Bienvenido al menu de Iventario " << endl;
 			cout<<"================================================== " << endl;
 			 break;
+		#include <iostream>
+#include <vector>
+#include <string> // Agregamos la inclusión para std::string
+
+class Producto {
+public:
+    Producto(std::string nombre, double precio, int cantidad) : nombre(nombre), precio(precio), cantidad(cantidad) {}
+
+    std::string getNombre() const {
+        return nombre;
+    }
+
+    double getPrecio() const {
+        return precio;
+    }
+
+    int getCantidad() const {
+        return cantidad;
+    }
+
+private:
+    std::string nombre;
+    double precio;
+    int cantidad;
+};
+
+class Factura {
+public:
+    void agregarProducto(const Producto& producto) {
+        productos.push_back(producto);
+    }
+
+    double calcularTotal() const {
+        double total = 0;
+        for (const Producto& producto : productos) {
+            total += producto.getPrecio() * producto.getCantidad();
+        }
+        return total;
+    }
+
+    void mostrarFactura() const {
+        std::cout << "Detalle de la Factura:" << std::endl;
+        for (const Producto& producto : productos) {
+            std::cout << producto.getNombre() << ": Q" << producto.getPrecio() << " x " << producto.getCantidad() << std::endl;
+        }
+        std::cout << "Total: Q" << calcularTotal() << std::endl;
+    }
+
+private:
+    std::vector<Producto> productos;
+};
+
+int main() {
+    Factura factura;
+
+    Producto producto1("Producto 1", 10.0, 2);
+    Producto producto2("Producto 2", 5.0, 3);
+
+    factura.agregarProducto(producto1);
+    factura.agregarProducto(producto2);
+
+    factura.mostrarFactura();
+
+    return 0;
+}
+
 		
 		case 5: 
 		system("cls");
