@@ -9,41 +9,23 @@ int ope,ope1;
 string nom,nom1,ape,ape1;
 int cog,registros,cel,regi;
 int contra=24052022,conta;
+int intentos=3;
 void estructura ( ){
 	
-
 struct Producto {
 	int idProducto;
 	string nombre;
 	string precio;
 	string fecha_caducidad;
 	};
-	Producto productos[6];
-	//producto 1
-	productos[0].idProducto = 001;
-	productos[0].nombre = "Cargador Tipo C ";
-	productos[0].precio = "Q.50.00";
-	//Producto 2 
-	productos[1].idProducto = 002;
-	productos[1].nombre = "Baterias para reloj";
-	productos[1].precio = "Q.25.00";
-	productos[1].fecha_caducidad = "20/10/25";
-	//producto 3
-	productos[2].idProducto = 003;
-	productos[2].nombre = "Cargador Tipo V8 ";
-	productos[2].precio = "Q.50.00";
-	//producto 4
-	productos[3].idProducto = 004;
-	productos[3].nombre = "Bocina JBL Para Oficina ";
-	productos[3].precio = "Q.300.00";
-	//producto 5
-	productos[4].idProducto = 005;
-	productos[4].nombre = "Luces Led Para Decorar tu Habitacion";
-	productos[4].precio = "Q.250.00";
-	//producto 6
-	productos[5].idProducto = 006;
-	productos[5].nombre = "Cigarros Electronicos 1000 plus ";
-	productos[5].precio = "Q.150.00";
+	Producto productos[6] = {
+		{001, "Cargador tipo C ", "Q.50.00", " " },
+		{002, "Baterias para reloj", "Q.25.00", "20/10/25"},
+		{003, "Cargador tipo V8 ", "Q.50.00", " " },
+		{004, "Bocina JBL Para Oficina ", "Q.300.00", " " },
+		{005, "Luces Led Para Decorar tu Habitacion", "Q.250.00", " " },
+		{006, "Cigarros Electronicos 1000 plus ", "Q.150.00", " " }
+	};
 	
 	for (int i = 0; i < 6; i++) {
         cout << "ID: " << productos[i].idProducto << endl;
@@ -55,6 +37,25 @@ struct Producto {
     }// fin del for
 	
 }// fin de void de estructura
+
+bool ingresarContrasena( ){
+	for(int inento = 0; intento <3; intento ++ ){
+		cout<<"Ingrese Contraseña Para Ingresar Para Registrar Nuevos Productos: ";
+		cin>>conta;
+		if(conta==contra ){
+			return true;
+		}else {
+			cout<<"Contraseña Incorrecta Intente de Nuevo: " << intento +1 << " de 3 "<< endl;
+		}
+	}// fin de for de intentos
+	cout << "Has agotado tus intentos de contraseña." << endl;
+    return false;
+}
+void nuevosProductos( ){
+	cout<<"Cuantos Productos Quiere Ingresar: ";
+	cin>>regi;
+}
+
 
 int main(){
 
@@ -114,17 +115,14 @@ int main(){
 				estructura ( );
 				
 				case 2:
-				cout<<"========================================================= " << endl; 
-				cout<<"Ingrese Contraseña para Ingresar Nuevos Proudctos "<< endl;
-				cin>>conta;
-				cout<<"========================================================= " << endl; 
-			if(conta ==contra){
-				cout<<"Cuantos Productos Quieres Ingresar " << endl;
-				cin>>regi;
-			}else if (conta =!contra){
-			    cout<<"Intente de Nuevo " << endl;
-			}// fin de if 
-			
+				if(ingresarContrasena()){
+					nuevosProductos( );
+				}else{
+					cout<<"Contraseña Incorrecta. Intentod Agutados";
+				}
+				break;
+			default:
+				cout<<"Opcion no Valida " << endl;
 	}//fin de switch de Operacion 1
 			
 			 break;
