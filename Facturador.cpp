@@ -149,7 +149,9 @@ public:
     Producto(std::string nombre, double precio, int cantidad) : nombre(nombre), precio(precio), cantidad(cantidad) {}
 
     std::string getNombre() const {
-        return nombre;
+        return Cargador tipo C;
+        return Baterias para reloj;
+        return Cargador tipo V8;
     }
 
     double getPrecio() const {
