@@ -76,6 +76,7 @@ int main(){
 	cout<<"============================================" << endl;
 	
 	switch (ope){
+		break;
 		case 1 :
 			system("cls");
 			cout<<"================================================== " << endl;
@@ -113,6 +114,7 @@ int main(){
 				cout<<"Bienvenido al Menú de Productos Ahora Verás Nuestros Productos en Existencia " << endl;
 				cout<<"========================================================= " << endl; 
 				estructura ( );
+				break;
 				
 				case 2:
 				if(ingresarContrasena()){
@@ -185,9 +187,9 @@ public:
     void mostrarFactura() const {
         std::cout << "Detalle de la Factura:" << std::endl;
         for (const Producto& producto : productos) {
-            std::cout << producto.getNombre() << ": Q" << producto.getPrecio() << " x " << producto.getCantidad() << std::endl;
+            std::cout << producto.getNombre() << ": "Q." << producto.getPrecio() << " x " << producto.getCantidad() << std::endl;
         }
-        std::cout << "Total: Q" << calcularTotal() << std::endl;
+        std::cout << "Total: "Q." << calcularTotal() << std::endl;
     }
 
 private:
