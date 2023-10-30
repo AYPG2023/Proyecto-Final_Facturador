@@ -6,11 +6,11 @@ Programa de facturas
 #include <string>
 using namespace std;
 int ope,ope1;
-string nom,nom1,ape,ape1;
+string nom,nom1,ape,ape1,fecha;
 int cog,registros,cel,regi;
 int contra=24052022,conta;
 int intentos=3;
-void estructura ( ){
+void estructura ( ){ 
 	
 struct Producto {
 	int idProducto;
@@ -39,7 +39,7 @@ struct Producto {
 }// fin de void de estructura
 
 bool ingresarContrasena( ){
-	for(int inento = 0; intento <3; intento ++ ){
+	for(int intento = 0; intento <3; intento ++ ){
 		cout<<"Ingrese Contraseña Para Ingresar Para Registrar Nuevos Productos: ";
 		cin>>conta;
 		if(conta==contra ){
@@ -54,7 +54,30 @@ bool ingresarContrasena( ){
 void nuevosProductos( ){
 	cout<<"Cuantos Productos Quiere Ingresar: ";
 	cin>>regi;
-}
+	struct newProduc {
+	int idProducto;
+	string nombre;
+	string precio;
+	string fecha_caducidad;
+	};// fin de la estructura de nuevos productos
+    newProduc nuevosProductos[regi];
+
+    for (int i = 0; i < regi; i++) {
+        cout << "Ingrese Id De Producto " << i + 1 << ": ";
+        cin >> nuevosProductos[i].idProducto;
+        cout << "Ingrese Nombre del Producto: ";
+        cin.ignore(); // Ayuda para ignorar el salto de línea pendiente
+        getline(cin, nuevosProductos[i].nombre);
+        cout << "Ingrese Precio: ";
+        cin >> nuevosProductos[i].precio;
+        cout << "Tiene Fecha de Caducidad Ingrese (si/no): ";
+        cin >> fecha;
+        if (fecha == "si") {
+            cout << "Ingrese fecha de Caducidad: ";
+            cin >> nuevosProductos[i].fecha_caducidad;
+        }// fin del if de si
+    }// fin del for
+}// fin de la funcion para Nuevos Productos
 
 
 int main(){
@@ -76,7 +99,6 @@ int main(){
 	cout<<"============================================" << endl;
 	
 	switch (ope){
-		break;
 		case 1 :
 			system("cls");
 			cout<<"================================================== " << endl;
@@ -115,10 +137,10 @@ int main(){
 				cout<<"========================================================= " << endl; 
 				estructura ( );
 				break;
-				
 				case 2:
 				if(ingresarContrasena()){
 					nuevosProductos( );
+				
 				}else{
 					cout<<"Contraseña Incorrecta. Intentod Agutados";
 				}
@@ -142,74 +164,6 @@ int main(){
 			cout<<"!Bienvenido al menu de Iventario " << endl;
 			cout<<"================================================== " << endl;
 			 break;
-		#include <iostream>
-#include <vector>
-#include <string> // Agregamos la inclusión para std::string
-
-class Producto {
-public:
-    Producto(std::string nombre, double precio, int cantidad) : nombre(nombre), precio(precio), cantidad(cantidad) {}
-
-    std::string getNombre() const {
-        return Cargador tipo C;
-        return Baterias para reloj;
-        return Cargador tipo V8;
-    }
-
-    double getPrecio() const {
-        return precio;
-    }
-
-    int getCantidad() const {
-        return cantidad;
-    }
-
-private:
-    std::string nombre;
-    double precio;
-    int cantidad;
-};
-
-class Factura {
-public:
-    void agregarProducto(const Producto& producto) {
-        productos.push_back(producto);
-    }
-
-    double calcularTotal() const {
-        double total = 0;
-        for (const Producto& producto : productos) {
-            total += producto.getPrecio() * producto.getCantidad();
-        }
-        return total;
-    }
-
-    void mostrarFactura() const {
-        std::cout << "Detalle de la Factura:" << std::endl;
-        for (const Producto& producto : productos) {
-            std::cout << producto.getNombre() << ": "Q." << producto.getPrecio() << " x " << producto.getCantidad() << std::endl;
-        }
-        std::cout << "Total: "Q." << calcularTotal() << std::endl;
-    }
-
-private:
-    std::vector<Producto> productos;
-};
-
-int main() {
-    Factura factura;
-
-    Producto producto1("Producto 1", 10.0, 2);
-    Producto producto2("Producto 2", 5.0, 3);
-
-    factura.agregarProducto(producto1);
-    factura.agregarProducto(producto2);
-
-    factura.mostrarFactura();
-
-    return 0;
-}
-
 		
 		case 5: 
 		system("cls");
