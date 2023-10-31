@@ -165,6 +165,7 @@ int main(){
 			cout<<"================================================== " << endl;
 			 break;
 			int main() {
+			#include<vector>
     vector<Producto> inventario;
 
     while (true) {
