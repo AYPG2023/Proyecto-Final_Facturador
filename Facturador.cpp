@@ -164,6 +164,72 @@ int main(){
 			cout<<"!Bienvenido al menu de Iventario " << endl;
 			cout<<"================================================== " << endl;
 			 break;
+			int main() {
+    vector<Producto> inventario;
+
+    while (true) {
+        cout << "Menú:" << endl;
+        cout << "1. Ver inventario de productos" << endl;
+        cout << "2. Ingresar nuevos productos" << endl;
+        cout << "3. Salir" << endl;
+        cout << "Seleccione una opción: ";
+
+        int opcion;
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1:
+                mostrarInventario(inventario);
+                break;
+            case 2:
+                if (ingresarContrasena()) {
+                    nuevosProductos(inventario);
+                }
+                break;
+            case 3:
+                return 0;
+            default:
+                cout << "Opción no válida. Intente de nuevo." << endl;
+                break;
+        }
+    }
+
+    return 0;
+}
+
+		int main() {
+    vector<Producto> inventario;
+
+    while (true) {
+        cout << "Menú:" << endl;
+        cout << "1. Ver inventario de productos" << endl;
+        cout << "2. Ingresar nuevos productos" << endl;
+        cout << "3. Salir" << endl;
+        cout << "Seleccione una opción: ";
+
+        int opcion;
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1:
+                mostrarInventario(inventario);
+                break;
+            case 2:
+                if (ingresarContrasena()) {
+                    nuevosProductos(inventario);
+                }
+                break;
+            case 3:
+                return 0;
+            default:
+                cout << "Opción no válida. Intente de nuevo." << endl;
+                break;
+        }
+    }
+
+    return 0;
+}
+
 		
 		case 5: 
 		system("cls");
