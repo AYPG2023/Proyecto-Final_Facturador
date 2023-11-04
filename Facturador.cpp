@@ -249,7 +249,7 @@ struct Proveedor {
     string telefono;
 };
 
-int main() {
+
     Proveedor proveedor;
     int opcion;
 
