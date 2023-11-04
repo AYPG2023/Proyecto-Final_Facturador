@@ -238,6 +238,62 @@ int main(){
 			cout<<"!Bienvenido al menu de Proveedores" << endl;
 			cout<<"================================================== " << endl;
 			 break;
+	#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct Proveedor {
+    string nombre;
+    string direccion;
+    string telefono;
+};
+
+int main() {
+    Proveedor proveedor;
+    int opcion;
+
+    while (true) {
+        cout << "Menú de Proveedores para Factura" << endl;
+        cout << "1. Ingresar Proveedor" << endl;
+        cout << "2. Generar Factura" << endl;
+        cout << "3. Salir" << endl;
+        cout << "Elija una opción: ";
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1:
+                cout << "Ingresar Proveedor" << endl;
+                cout << "Nombre del proveedor: ";
+                cin.ignore();
+                getline(cin, proveedor.nombre);
+                cout << "Dirección del proveedor: ";
+                getline(cin, proveedor.direccion);
+                cout << "Teléfono del proveedor: ";
+                getline(cin, proveedor.telefono);
+                cout << "Proveedor ingresado con éxito." << endl;
+                break;
+            case 2:
+                cout << "Generar Factura" << endl;
+                if (proveedor.nombre.empty()) {
+                    cout << "Por favor, ingrese un proveedor primero." << endl;
+                } else {
+                    // Aquí puedes agregar la lógica para generar una factura con el proveedor ingresado.
+                    cout << "Factura generada con éxito." << endl;
+                }
+                break;
+            case 3:
+                cout << "Saliendo del programa." << endl;
+                return 0;
+            default:
+                cout << "Opción no válida. Por favor, elija una opción válida." << endl;
+                break;
+        }
+    }
+
+    return 0;
+}
+
 	}	
 	
 	system("pause");
