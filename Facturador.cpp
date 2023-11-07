@@ -163,137 +163,80 @@ int main(){
 		    cout<<"================================================== " << endl;
 			cout<<"!Bienvenido al menu de Iventario " << endl;
 			cout<<"================================================== " << endl;
-			 break;
-			int main() {
-			#include<vector>
-    vector<Producto> inventario;
-
-    while (true) {
-        cout << "Menú:" << endl;
-        cout << "1. Ver inventario de productos" << endl;
-        cout << "2. Ingresar nuevos productos" << endl;
-        cout << "3. Salir" << endl;
-        cout << "Seleccione una opción: ";
-
-        int opcion;
-        cin >> opcion;
-
-        switch (opcion) {
-            case 1:
-                mostrarInventario(inventario);
-                break;
-            case 2:
-                if (ingresarContrasena()) {
-                    nuevosProductos(inventario);
-                }
-                break;
-            case 3:
-                return 0;
+				while (true) {
+                cout << "1. Ver inventario de productos" << endl;
+                cout << "2. Salir" << endl;
+                int opcion;
+                cin >> opcion;
+                switch (opcion) {
+        case 1:
+               mostrarInventario(inventario);
+            break;
+        case 2:
+            return 0;
             default:
-                cout << "Opción no válida. Intente de nuevo." << endl;
-                break;
-        }
-    }
-
-    return 0;
-}
-
-		int main() {
-    vector<Producto> inventario;
-
-    while (true) {
-        cout << "Menú:" << endl;
-        cout << "1. Ver inventario de productos" << endl;
-        cout << "2. Ingresar nuevos productos" << endl;
-        cout << "3. Salir" << endl;
-        cout << "Seleccione una opción: ";
-
-        int opcion;
-        cin >> opcion;
-
-        switch (opcion) {
-            case 1:
-                mostrarInventario(inventario);
-                break;
-            case 2:
-                if (ingresarContrasena()) {
-                    nuevosProductos(inventario);
+            cout << "Opcion no valida. Intente de nuevo." << endl;
+            break;
                 }
-                break;
-            case 3:
-                return 0;
-            default:
-                cout << "Opción no válida. Intente de nuevo." << endl;
-                break;
-        }
-    }
-
-    return 0;
-}
-
+            }
+            break;
 		
 		case 5: 
 		system("cls");
 		    cout<<"================================================== " << endl;
 			cout<<"!Bienvenido al menu de Proveedores" << endl;
 			cout<<"================================================== " << endl;
-			 break;
-	#include <iostream>
-#include <string>
+			struct Proveedor {
+        int idProveedor;
+        string nombreProveedor;
+        string productosSuministrados;
+    };
 
-using namespace std;
-
-struct Proveedor {
-    string nombre;
-    string direccion;
-    string telefono;
-};
-
-
-    Proveedor proveedor;
-    int opcion;
+    vector<Proveedor> proveedores;
 
     while (true) {
-        cout << "Menú de Proveedores para Factura" << endl;
-        cout << "1. Ingresar Proveedor" << endl;
-        cout << "2. Generar Factura" << endl;
+        cout << "1. Ver proveedores de productos electronicos" << endl;
+        cout << "2. Registrar nuevo proveedor" << endl;
         cout << "3. Salir" << endl;
-        cout << "Elija una opción: ";
+        int opcion;
         cin >> opcion;
 
         switch (opcion) {
             case 1:
-                cout << "Ingresar Proveedor" << endl;
-                cout << "Nombre del proveedor: ";
-                cin.ignore();
-                getline(cin, proveedor.nombre);
-                cout << "Dirección del proveedor: ";
-                getline(cin, proveedor.direccion);
-                cout << "Teléfono del proveedor: ";
-                getline(cin, proveedor.telefono);
-                cout << "Proveedor ingresado con éxito." << endl;
-                break;
-            case 2:
-                cout << "Generar Factura" << endl;
-                if (proveedor.nombre.empty()) {
-                    cout << "Por favor, ingrese un proveedor primero." << endl;
-                } else {
-                    // Aquí puedes agregar la lógica para generar una factura con el proveedor ingresado.
-                    cout << "Factura generada con éxito." << endl;
+                cout << "Proveedores registrados:" << endl;
+                for (const Proveedor& proveedor : proveedores) {
+                    cout << "ID: " << proveedor.idProveedor << endl;
+                    cout << "Nombre: " << proveedor.nombreProveedor << endl;
+                    cout << "Productos suministrados: " << proveedor.productosSuministrados << endl;
+                    cout << "-----------------------------" << endl;
                 }
                 break;
-            case 3:
-                cout << "Saliendo del programa." << endl;
+
+            case 2:
+                Proveedor nuevoProveedor;
+                cout << "Ingrese el ID del nuevo proveedor: ";
+                cin >> nuevoProveedor.idProveedor;
+                cout << "Ingrese el nombre del proveedor: ";
+                cin.ignore();
+                getline(cin, nuevoProveedor.nombreProveedor);
+                cout << "Ingrese los productos suministrados por el proveedor: ";
+                getline(cin, nuevoProveedor.productosSuministrados);
+                proveedores.push_back(nuevoProveedor);
+                cout << "Nuevo proveedor registrado con éxito." << endl;
+                break;
+
+            
                 return 0;
-            default:
-                cout << "Opción no válida. Por favor, elija una opción válida." << endl;
+                
+
+            
+                cout << "Opción no válida. Intente de nuevo." << endl;
                 break;
         }
     }
-
-    return 0;
-}
-
+    break;
+			
+			 break;
 	}	
 	
 	system("pause");
