@@ -209,6 +209,26 @@ int main(){
                     cout << "Nombre: " << proveedor.nombreProveedor << endl;
                     cout << "Productos suministrados: " << proveedor.productosSuministrados << endl;
                     cout << "-----------------------------" << endl;
+		 vector<Proveedor> proveedores;  // Almacenar proveedores
+
+    // Agregar proveedores de productos electrónicos
+    proveedores.push_back({1, "TecnoSuministros SA", "Cargadores, Baterías, Cables"});
+    proveedores.push_back({2, "ElectroMega Distribuciones", "Componentes electrónicos, Cables, Accesorios"});
+    proveedores.push_back({3, "Innovatech Pro", "Dispositivos móviles, Accesorios"});
+    proveedores.push_back({4, "Elexpress Soluciones", "Electrónica industrial, Componentes"});
+    proveedores.push_back({5, "ElectroniWorld", "Electrónica de consumo, Gadget"});
+    
+    // Mostrar los proveedores registrados
+    cout << "Proveedores registrados de productos electrónicos:" << endl;
+    for (const Proveedor& proveedor : proveedores) {
+        cout << "ID: " << proveedor.idProveedor << endl;
+        cout << "Nombre: " << proveedor.nombreProveedor << endl;
+        cout << "Productos suministrados: " << proveedor.productosSuministrados << endl;
+        cout << "-----------------------------" << endl;
+    }
+
+    return 0;
+    }
                 }
                 break;
 
